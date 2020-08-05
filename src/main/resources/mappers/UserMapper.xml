@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeng.dao.UserDao">
+    <resultMap id="User" type="com.zeng.pojo.User">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="password" property="password" />
+    </resultMap>
+    <select id="getAllUsers" resultMap="User">
+        select * from mb_users
+    </select>
+    <select id="getUserByNameAndPwd" resultType="User">
+        select * from mb_users where name = #{name} and password = #{pwd}
+    </select>
+
+</mapper>

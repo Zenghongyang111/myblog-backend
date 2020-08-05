@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeng.dao.EssayDao">
+    <resultMap id="Essay" type="com.zeng.pojo.Essay">
+        <id column="id" property="id" />
+        <result column="essay" property="essay"/>
+        <result column="title" property="title"/>
+        <result column="date" property="date"/>
+        <result column="author" property="author"/>
+    </resultMap>
+    <select id="getAllEssays" resultMap="Essay">
+        SELECT * FROM mb_essay;
+    </select>
+    <select id="getEssayById" resultType="com.zeng.pojo.Essay">
+        SELECT * FROM mb_essay where id = #{id};
+    </select>
+</mapper>
