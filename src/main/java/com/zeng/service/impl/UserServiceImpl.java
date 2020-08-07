@@ -23,8 +23,7 @@ public class UserServiceImpl implements UserServiceDao {
      */
     @Override
     public Object getUsers() {
-        Object usersJson = JSON.toJSON(userDao.getAllUsers());
-        return usersJson;
+        return JSON.toJSON(userDao.getAllUsers());
     }
 
     /**
@@ -35,7 +34,9 @@ public class UserServiceImpl implements UserServiceDao {
      * @return 返回用户信息
      */
     @Override
-    public User getUsersByNameAndPwd(String name, String pwd) {
-        return null;
+    public Object getUsersByNameAndPwd(String name, String pwd) {
+        return JSON.toJSON(userDao.getUserByNameAndPwd(name,pwd));
     }
+
+
 }

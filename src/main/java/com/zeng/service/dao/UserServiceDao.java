@@ -21,5 +21,5 @@ public interface UserServiceDao {
      * @param pwd 密码
      * @return  返回用户信息
      */
-    public User getUsersByNameAndPwd(String name , String pwd);
+    public Object getUsersByNameAndPwd(String name , String pwd);
 }

@@ -5,6 +5,7 @@ import com.zeng.service.dao.UserServiceDao;
 import com.zeng.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,5 +31,12 @@ public class HomeController {
     public Object getUsers(){
        // return "hello world11111";
      return userService.getUsers() ;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/users",method = RequestMethod.POST)
+    public Object getUsersByNameAndPwd(User user){
+        // return "hello world11111";
+        return userService.getUsersByNameAndPwd(user.getName(),user.getPassword()) ;
     }
 }

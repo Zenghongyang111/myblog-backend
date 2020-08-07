@@ -16,4 +16,8 @@
     <select id="getEssayById" resultType="com.zeng.pojo.Essay">
         SELECT * FROM mb_essay where id = #{id};
     </select>
+    <select id="getEssaysByTagId" resultMap="Essay">
+        SELECT * FROM mb_essay as e WHERE e.id IN
+        (SELECT et.essay_id from mb_essay_tag as et where  et.tag_id = #{tagId})
+    </select>
 </mapper>

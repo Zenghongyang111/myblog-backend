@@ -23,4 +23,11 @@ public interface EssayDao {
      * @return  返回文章对象
      */
     public Essay getEssayById(@Param("id") int id);
+
+    /**
+     * 根据文章标签查询对应文章
+     * @param id 标签id
+     * @return 返回 文章列表
+     */
+    public List<Essay> getEssaysByTagId(@Param("tagId") int id);
 }

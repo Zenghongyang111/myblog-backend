@@ -32,6 +32,17 @@ public class EssayServiceImpl implements EssayServiceDao {
      */
     @Override
     public Object getEssayById(int id) {
-        return null;
+        return JSON.toJSON(essayDao.getEssayById(id));
+    }
+
+    /**
+     * 根据文章标签查询对应文章
+     *
+     * @param id 标签id
+     * @return 返回 文章列表
+     */
+    @Override
+    public Object getEssaysByTagId(int id) {
+        return essayDao.getEssaysByTagId(id);
     }
 }
